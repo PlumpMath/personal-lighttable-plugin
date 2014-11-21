@@ -1,0 +1,56 @@
+[
+ ;; Panels
+ [:app "pmeta-shift-c" :toggle-console]
+ [:app "ctrl-w" :workspace.show]
+ [:app "ctrl-c" :show-connect]
+ [:app "pmeta-shift-p" :show-commandbar]
+ [:app "pmeta-p" :navigate-workspace-transient]
+
+ ;; Clear results
+ [:app "ctrl-l" :clear-console]
+ [:app "ctrl-o" :clear-inline-results]
+
+ ;; Tabs
+ [:app "cmd-alt-left" :tabs.prev]
+ [:app "cmd-alt-right" :tabs.next]
+ [:app "ctrl-1" :tabset.close]
+ [:app "ctrl-2" :tabset.new :tabs.move-next-tabset]
+ [:app "ctrl-n" :tabset.next]
+
+ ;; Basics
+ [:editor "cmd-esc" :eval.cancel-all!]
+ [:editor "cmd-," :toggle-comment-selection]
+
+ ;; Move around
+ [:editor "pmeta-left" :editor.line-start-smart]
+
+ ;; Watches
+ [:editor "alt-w" :editor.watch.watch-selection]
+ [:editor "alt-shift-w" :editor.watch.unwatch]
+
+ ;; Paredit
+ [:editor "ctrl-shift-left" :paredit.grow.left]
+ [:editor "ctrl-shift-right" :paredit.grow.right]
+ [:editor "ctrl-shift-up" :paredit.shrink.left]
+ [:editor "ctrl-shift-down" :paredit.shrink.right]
+ [:editor "ctrl-s" :paredit.select.parent]
+ [:editor "ctrl-enter" (:paredit.select.parent "(") :eval-editor-form :paredit.select.clear]
+ [:editor "ctrl-e" (:paredit.select.parent "(") (:eval.custom "(macroexpand-1 '__SELECTION__)" {:result-type :inline})]
+ [:editor "ctrl-shift-e" (:paredit.select.parent "(") (:eval.custom "(macroexpand '__SELECTION__)" {:result-type :inline})]
+
+ ;; Clojure specific
+ [:editor "ctrl-j" (:eval.custom "*ns*")]
+ [:editor "pmeta-t" (:eval.custom "(clojure.test/run-all-tests (re-pattern (str \"^\" *ns* \".*\")))" {:result-type :statusbar})]
+ [:editor "ctrl-shift-n" :clear-console :typedclojure.check.ns]
+
+ ;; Sublime stuff
+ [:editor "ctrl-pmeta-up" :editor.sublime.swapLineUp]
+ [:editor "ctrl-pmeta-down" :editor.sublime.swapLineDown]
+ [:editor "shift-pmeta-d" :editor.sublime.duplicateLine]
+ [:editor "shift-pmeta-l" :editor.sublime.splitSelectionByLine]
+ [:editor "ctrl-alt-up" :editor.sublime.selectLinesUpward]
+ [:editor "ctrl-alt-down" :editor.sublime.selectLinesDownward]
+ [:editor "ctrl-m" :editor.sublime.goToBracket]
+ [:editor "pmeta-d" :editor.sublime.selectNextOccurrence]
+ [:editor "pmeta-j" :editor.sublime.joinLines]
+]
