@@ -1,11 +1,7 @@
-;; Your file has been converted to the new flat format.
-;; Conversion does not preserve comments or indentation.
-;; File is backed up at /Users/erik/Library/Application Support/LightTable/User/user.behaviors.bak
 [
  [:app :lt.objs.style/set-skin "dark"]
  [:app :lt.objs.files/file.ignore-pattern "(^\\..*)|\\.class$|target/|svn|cvs|\\.git|\\.pyc|~|\\.swp|\\.jar|.DS_Store|\\.nrepl-port|meta"]
  [:app :-lt.objs.intro/show-intro]
- [:app :-lt.plugins.lt-scrubber/activate-scrubber]
  [:app :-lt.objs.tabs/show-close-button]
 
  [:editor :lt.objs.editor/no-wrap]
@@ -18,4 +14,5 @@
 
  [:editor.clojure :lt.objs.langs.clj/print-length 1000]
  [:editor.clojure :-lt.plugins.auto-complete/auto-show-on-input]
+
 ]

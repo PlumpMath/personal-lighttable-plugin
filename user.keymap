@@ -21,6 +21,9 @@
  [:editor "cmd-esc" :eval.cancel-all!]
  [:editor "cmd-," :toggle-comment-selection]
 
+ ;; Fix
+ [:editor.keys.hinting.active "enter" [:auto-complete]] ;; make enter select auto-completion suggestion
+
  ;; Move around
  [:editor "pmeta-left" :editor.line-start-smart]
 
